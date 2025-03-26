@@ -4,13 +4,24 @@ import React from "react";
 
 function BoxColour ({colour, value}) {
 
-  const matchedColour = value === colour; 
+  const matchedColour= value === colour; 
 
   return (
     <div
-      className={`box ${colour}`}
+
       style={{ backgroundColor: matchedColour ? colour : "transparent" }}>
-      <h2>{matchedColour ? `¡Soy el ${colour}!` : colour}</h2>
+      <h2 className={`box ${colour}`}>1</h2>
+      <h2 className={`box ${colour}`}>2</h2>
+      <h2 className={`box ${colour}`}>3</h2>
+      <h2 className={`box ${colour}`}>4</h2>
+      <h2 className={`box ${colour}`}>5</h2>
+      <h2 className={`box ${colour}`}>6</h2>
+      <h2 className={`box ${colour}`}>7</h2>
+      <h2 className={`box ${colour}`}>8</h2>
+      <h2 className={`box ${colour}`}>9</h2>
+
+  
+      <h2>{matchedColour ? `¡Yes, I´m  ${colour} colour!` : colour}</h2>
   
     </div>
   );
