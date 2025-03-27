@@ -31,6 +31,16 @@
   color: white;
 }
 
+.red { background-color: red; }
+.green { background-color: green; }
+.pink { background-color: pink; }
+.yellow { background-color: yellow; color: black; }
+.purple { background-color: purple; }
+.white { background-color: white; color: black; }
+.blue { background-color: blue; }
+.aqua { background-color: aqua; }
+.olive { background-color: olive; }
+
 /* Estilos para el input */
 input {
   width: 50%;

@@ -1,29 +1,48 @@
 //- `BoxColor.jsx`: Aquí irá el componente del cuadrado de color.
 
 import React from "react";
+import { useEffect, useRef, useState } from "react";
+
 
 function BoxColour ({colour, value}) {
+  const boxValue = useRef (null);
+  const [sameColour, setSameColour] = useState(false)
 
-  const sameColour= value === colour; 
+
+  useEffect (()=>{
+    const input= value;
+    if (input === colour) {
+      setSameColour(true); // Si coincide, establecemos el estado a true
+      if (boxValue.current) {
+        boxValue.current.style.backgroundColor = colour; // Cambiamos el color de fondo
+        boxValue.current.innerText = '¡Soy el color!'; // Cambiamos el texto dentro de la caja
+      }
+    } else {
+      setSameColour(false); // Si no coincide, mantenemos el estado como false
+      if (boxValue.current) {
+        boxValue.current.style.backgroundColor = ''; // Eliminamos el fondo
+        boxValue.current.innerText = 'No soy el color'; // Cambiamos el texto a "No soy el color"
+      }
+    }
+  }, [value, colour]); // El efecto depende de value y colour
 
   return (
-    <div>
-      <h2 className={`box ${colour}`}>1</h2>
-      <h2 className={`box ${colour}`}>2</h2>
-      <h2 className={`box ${colour}`}>3</h2>
-      <h2 className={`box ${colour}`}>4</h2>
-      <h2 className={`box ${colour}`}>5</h2>
-      <h2 className={`box ${colour}`}>6</h2>
-      <h2 className={`box ${colour}`}>7</h2>
-      <h2 className={`box ${colour}`}>8</h2>
-      <h2 className={`box ${colour}`}>9</h2>
-
+    <div id="container">
+      <div className="box">BOX1</div>
+      <div className="box">BOX2</div>
+      <div className="box">BOX3</div>
+      <div className="box">BOX4</div>
+      <div className="box">BOX5</div>
+      <div className="box">BOX6</div>
+      <div className="box">BOX7</div>
+      <div className="box">BOX8</div>
+      <div className="box">BOX9</div>
+      {sameColour ? '¡Soy el color!' : 'No soy el color'}
     </div>
   )
-};
+}
 
 export default BoxColour;  
-
 
 
 
