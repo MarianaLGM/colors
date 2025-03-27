@@ -24,7 +24,7 @@ function MyFormChallenge() {
   return (
     <>
       <input
-        id="colour"
+        id="name"
         type="text"
         placeholder="Choose a colour"
         className="inputClass"
