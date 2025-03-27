@@ -4,12 +4,10 @@ import React from "react";
 
 function BoxColour ({colour, value}) {
 
-  const matchedColour= value === colour; 
+  const sameColour= value === colour; 
 
   return (
     <div>
-
-      
       <h2 className={`box ${colour}`}>1</h2>
       <h2 className={`box ${colour}`}>2</h2>
       <h2 className={`box ${colour}`}>3</h2>
@@ -21,7 +19,7 @@ function BoxColour ({colour, value}) {
       <h2 className={`box ${colour}`}>9</h2>
 
   
-      <h2>{matchedColour ? `¡Yes, I am  ${colour} colour!` : colour}</h2>
+      <h2>{sameColour ? `¡Yes, I am  ${colour} colour!` : colour}</h2>
   
     </div>
   )
