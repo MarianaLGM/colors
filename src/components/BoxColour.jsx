@@ -14,13 +14,13 @@ function BoxColour ({colour, value}) {
     if (input === colour) {
       setSameColour(true); // Si coincide, establecemos el estado a true
       if (boxValue.current) {
-        boxValue.current.style.backgroundColor = colour; // Cambiamos el color de fondo
+        //boxValue.current.style.backgroundColor = colour; // Cambiamos el color de fondo
         boxValue.current.innerText = '¡Soy el color!'; // Cambiamos el texto dentro de la caja
       }
     } else {
       setSameColour(false); // Si no coincide, mantenemos el estado como false
       if (boxValue.current) {
-        boxValue.current.style.backgroundColor = ''; // Eliminamos el fondo
+       // boxValue.current.style.backgroundColor = ''; // Eliminamos el fondo
         boxValue.current.innerText = 'No soy el color'; // Cambiamos el texto a "No soy el color"
       }
     }
@@ -28,15 +28,7 @@ function BoxColour ({colour, value}) {
 
   return (
     <div id="container">
-      <div className="box">BOX1</div>
-      <div className="box">BOX2</div>
-      <div className="box">BOX3</div>
-      <div className="box">BOX4</div>
-      <div className="box">BOX5</div>
-      <div className="box">BOX6</div>
-      <div className="box">BOX7</div>
-      <div className="box">BOX8</div>
-      <div className="box">BOX9</div>
+      <div className={`box ${colour}`}></div>
       {sameColour ? '¡Soy el color!' : 'No soy el color'}
     </div>
   )
