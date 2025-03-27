@@ -7,9 +7,9 @@ function BoxColour ({colour, value}) {
   const matchedColour= value === colour; 
 
   return (
-    <div
+    <div>
 
-      style={{ backgroundColor: matchedColour ? colour : "transparent" }}>
+      
       <h2 className={`box ${colour}`}>1</h2>
       <h2 className={`box ${colour}`}>2</h2>
       <h2 className={`box ${colour}`}>3</h2>
