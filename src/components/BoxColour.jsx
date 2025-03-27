@@ -21,10 +21,10 @@ function BoxColour ({colour, value}) {
       <h2 className={`box ${colour}`}>9</h2>
 
   
-      <h2>{matchedColour ? `¡Yes, I´m  ${colour} colour!` : colour}</h2>
+      <h2>{matchedColour ? `¡Yes, I am  ${colour} colour!` : colour}</h2>
   
     </div>
-  );
+  )
 };
 
 export default BoxColour;  
