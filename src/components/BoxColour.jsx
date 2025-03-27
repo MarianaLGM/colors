@@ -18,9 +18,6 @@ function BoxColour ({colour, value}) {
       <h2 className={`box ${colour}`}>8</h2>
       <h2 className={`box ${colour}`}>9</h2>
 
-  
-      <h2>{sameColour ? `¡Yes, I am  ${colour} colour!` : colour}</h2>
-  
     </div>
   )
 };
