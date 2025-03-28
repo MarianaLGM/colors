@@ -6,20 +6,29 @@ function BoxColour({ colour, value }) {
   const boxValue = useRef(null);  // Ref al div de la BOX
   const [sameColour, setSameColour] = useState(false);  // ESTADO verifica si coincide
 
-  useEffect(() => {
-    
-    if (value.toLowerCase() === colour) {// Comparamos el valor del input con el color de la caja
-      setSameColour(true);  
+useEffect(() => {
+  if (value.toLowerCase() === colour) {//input vs BOX
+    setSameColour(true);  
+  } else {
+    setSameColour(false); 
+  }
+}, [value, colour]);  // se ejecuta cuando el valor del input o el color cambian
+
+useEffect(() => {
+  if (boxValue.current) {
+    if (sameColour) {
+      boxValue.current.style.backgroundColor = colour;  
     } else {
-      setSameColour(false); 
+      boxValue.current.style.backgroundColor = "antiquewhite";  
     }
-  }, [value, colour]);  //  ejecuta cada vez que el valor del input o el color cambian
+  }
+}, [sameColour, colour]);  
+
 
   if (sameColour) {
     return (
       <div 
         className={`box ${colour}`} 
-        style={{ backgroundColor: colour }} 
         ref={boxValue}
       >
         {`¡Soy el color ${value}!`}
@@ -29,7 +38,6 @@ function BoxColour({ colour, value }) {
     return (
       <div 
         className={`box ${colour}`} 
-        style={{ backgroundColor: 'white' }}  // fondo blanco por defecto
         ref={boxValue}
       >
         {`No soy el color ${value}`}
