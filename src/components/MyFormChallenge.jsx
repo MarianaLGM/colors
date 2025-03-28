@@ -1,39 +1,40 @@
-//- `MyFormChallenge.jsx`: Aquí crearemos el formulario e importaremos las BoxColor para pasarle `props`.
-import {useState} from "react"
+import React, { useState } from "react";
 import BoxColour from "./BoxColour";
-
-//con el REF podemos acceder a elementos del DOM y PODER SACAR sus atributos
 
 function MyFormChallenge() {
   const colours = ['red', 'green', 'pink', 'yellow', 'purple', 'white', 'blue', 'aqua', 'olive'];
-  const [inputValue, setInputValue]= useState("");
-  
+  const [value, setValue] = useState("");  // maneja el valor del input
+
+
 
   const handleChange = (e) => {
-    setInputValue(e.target.value);  // actualizamos el estado del input
+    setValue(e.target.value);  // act. el estado con el valor del input
   };
-  
+
+
+
   return (
     <>
       <input
         type="text"
-        value={inputValue}
+        value={value}
         placeholder="Escribe el color"
-        onChange={handleChange} // aquí llama a handleChange cuando cambia el valor
+        onChange={handleChange} // al cambiar el valor del input, actualizamos el estado
       />
+      {console.log(value)} {/* Muestra el valor actual del input*/}
+ 
       <div className="container">
         {colours.map((colour) => (
-          <BoxColour
-            key={colour}
-            colour={colour}
-            inputValue={inputValue} 
+          <BoxColour 
+            key={colour} 
+            colour={colour} 
+            value={value} //valor del input
           />
         ))}
       </div>
     </>
   );
 }
-
 
 export default MyFormChallenge;
 
