@@ -1,5 +1,9 @@
+//`MyFormChallenge.jsx`: Aquí crearemos el formulario e importaremos las BoxColor para pasarle `props`.
+
 import React, { useState } from "react";
 import BoxColour from "./BoxColour";
+
+
 
 function MyFormChallenge() {
   const colours = ['red', 'green', 'pink', 'yellow', 'purple', 'white', 'blue', 'aqua', 'olive'];

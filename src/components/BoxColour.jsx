@@ -13,7 +13,7 @@ function BoxColour({ colour, value }) {
     } else {
       setSameColour(false); 
     }
-  }, [value, colour]);  // Se ejecuta cada vez que el valor del input o el color cambian
+  }, [value, colour]);  //  ejecuta cada vez que el valor del input o el color cambian
 
   if (sameColour) {
     return (
