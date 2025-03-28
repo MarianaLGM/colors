@@ -7,8 +7,8 @@ function BoxColour({ colour, value }) {
   const [sameColour, setSameColour] = useState(false);  // ESTADO verifica si coincide
 
   useEffect(() => {
-    // Comparamos el valor del input con el color de la caja
-    if (value.toLowerCase() === colour) {
+    
+    if (value.toLowerCase() === colour) {// Comparamos el valor del input con el color de la caja
       setSameColour(true);  
     } else {
       setSameColour(false); 
@@ -29,7 +29,7 @@ function BoxColour({ colour, value }) {
     return (
       <div 
         className={`box ${colour}`} 
-        style={{ backgroundColor: 'white' }}  // Fondo blanco por defecto
+        style={{ backgroundColor: 'white' }}  // fondo blanco por defecto
         ref={boxValue}
       >
         {`No soy el color ${value}`}

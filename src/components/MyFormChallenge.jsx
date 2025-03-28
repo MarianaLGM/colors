@@ -5,13 +5,9 @@ function MyFormChallenge() {
   const colours = ['red', 'green', 'pink', 'yellow', 'purple', 'white', 'blue', 'aqua', 'olive'];
   const [value, setValue] = useState("");  // maneja el valor del input
 
-
-
   const handleChange = (e) => {
     setValue(e.target.value);  // act. el estado con el valor del input
   };
-
-
 
   return (
     <>
@@ -22,7 +18,7 @@ function MyFormChallenge() {
         onChange={handleChange} // al cambiar el valor del input, actualizamos el estado
       />
       {console.log(value)} {/* Muestra el valor actual del input*/}
- 
+
       <div className="container">
         {colours.map((colour) => (
           <BoxColour 
